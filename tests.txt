@@ -2,6 +2,10 @@ IdentityEmpty
   extensions [parallel]
   parallel:map [?] [] => []
 
+IdentityOne
+  extensions [parallel]
+  parallel:map [?] [9] => [9]
+
 SquareEmpty
   extensions [parallel]
   parallel:map [? * ?] [] => []
@@ -19,3 +23,38 @@ SquareMany
   O> set glob1 n-values 1000000 [?]
   O> set glob2 sum map [? * ?] glob1
   sum parallel:map [? * ?] glob1 = glob2 => true
+
+IdentityProcedureEmpty
+  extensions [parallel]
+  to-report identity [x] report x end
+  parallel:map identity [] => []
+
+IdentityProcedureOne
+  extensions [parallel]
+  to-report identity [x] report x end
+  parallel:map identity [9] => [9]
+
+SquareProcedureEmpty
+  extensions [parallel]
+  to-report square [x] report x * x end
+  parallel:map square [] => []
+
+SquareProcedureOne
+  extensions [parallel]
+  to-report square [x] report x * x end
+  parallel:map square [5] => [25]
+
+## at present the last two tests here fail.  it's unclear to me at the
+## moment whether this can ever be made to work. - ST 7/27/11
+
+SquareProcedureFour
+  extensions [parallel]
+  to-report square [x] report x * x end
+  parallel:map square [1 2 3 4] => [1 4 9 16]
+
+SquareProcedureMany
+  extensions [parallel]
+  to-report square [x] report x * x end
+  O> set glob1 n-values 1000000 [?]
+  O> set glob2 sum map square glob1
+  sum parallel:map square glob1 = glob2 => true
