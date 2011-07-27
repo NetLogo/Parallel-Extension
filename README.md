@@ -1,3 +1,5 @@
+# WARNING: THIS IS UNFINISHED, EXPERIMENTAL, BROKEN CODE
+
 # NetLogo Parallel extension
 
 Experimental extension that allows performing a map operation in parallel on a NetLogo list.
