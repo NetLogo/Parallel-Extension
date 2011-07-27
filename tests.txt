@@ -1,3 +1,21 @@
-ParallelMap
+IdentityEmpty
+  extensions [parallel]
+  parallel:map [?] [] => []
+
+SquareEmpty
+  extensions [parallel]
+  parallel:map [? * ?] [] => []
+
+SquareOne
+  extensions [parallel]
+  parallel:map [? * ?] [5] => [25]
+
+SquareFour
   extensions [parallel]
   parallel:map [? * ?] [1 2 3 4] => [1 4 9 16]
+
+SquareMany
+  extensions [parallel]
+  O> set glob1 n-values 1000000 [?]
+  O> set glob2 sum map [? * ?] glob1
+  sum parallel:map [? * ?] glob1 = glob2 => true

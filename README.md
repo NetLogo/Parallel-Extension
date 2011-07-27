@@ -1,6 +1,8 @@
 # NetLogo Parallel extension
 
-Allows performing a map operation in parallel on a NetLogo list.
+Experimental extension that allows performing a map operation in parallel on a NetLogo list.
+
+The extension requires NetLogo 5.0beta4 and Scala 2.9.0.1.
 
 ## Building
 

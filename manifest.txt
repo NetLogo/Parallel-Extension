@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Extension-Name: parallel
-Class-Manager: ParallelExtension
+Class-Manager: org.nlogo.extensions.parallel.ParallelExtension
 NetLogo-Extension-API-Version: 5.0
