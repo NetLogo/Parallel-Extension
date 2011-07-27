@@ -44,9 +44,6 @@ SquareProcedureOne
   to-report square [x] report x * x end
   parallel:map square [5] => [25]
 
-## at present the last two tests here fail.  it's unclear to me at the
-## moment whether this can ever be made to work. - ST 7/27/11
-
 SquareProcedureFour
   extensions [parallel]
   to-report square [x] report x * x end
